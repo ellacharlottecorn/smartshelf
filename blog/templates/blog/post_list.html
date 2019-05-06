@@ -1,0 +1,10 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+      {% for paint in paints %}
+          <div>
+            <h2><a href="{% url 'post_detail' pk=paint.pk %}">{{ paint.color }}</a></h2>
+              <p>{{ paint.color }}, {{ paint.type }}</p>
+              <p>{{ paint.size|linebreaksbr }}</p>
+          </div>
+      {% endfor %}
+{% endblock %}
